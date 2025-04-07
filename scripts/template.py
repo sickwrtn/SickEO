@@ -33,6 +33,7 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
 
         def process_before_every_step(self, p, *args, **kwargs):
+                print(p.steps)
                 p.steps = 30
                 print("process_before_every_step")
 
