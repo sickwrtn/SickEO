@@ -40,6 +40,7 @@ class ExtensionTemplateScript(scripts.Script):
                 print("process_before_every_sampling")
 
         def process_before_every_step(self, p, *args, **kwargs):
+                print(p)
                 print(kwargs['d']['denoised'])
                 print(kwargs['d']['denoised'].shape)
                 tf = transforms.ToPILImage()
