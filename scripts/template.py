@@ -33,7 +33,6 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
         
         def process(self, p, *args):
-
                 print("process Event")
 
         def process_before_every_sampling(self, p, *args, **kwargs):
@@ -41,9 +40,7 @@ class ExtensionTemplateScript(scripts.Script):
 
         def process_before_every_step(self, p, *args, **kwargs):
                 proc = process_images(p)
-                print(proc.images)
-                # 값의 범위 조정 (최소-최대 정규화)
-                print(kwargs['d']['denoised'])
+                proc.images[0].show()
                 print("process_before_every_step")
 
         def run(self, p, angle, checkbox):
