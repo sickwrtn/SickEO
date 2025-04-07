@@ -43,6 +43,7 @@ class ExtensionTemplateScript(scripts.Script):
                 if (len(proc.images) != 0):
                         proc.images[0].show()
                 print("process_before_every_step")
+                return proc
 
         def run(self, p, angle, checkbox):
                 proc = process_images(p)
