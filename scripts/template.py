@@ -29,6 +29,16 @@ class ExtensionTemplateScript(scripts.Script):
                                         label="USE THIS OPTION"
                                 )
                 return [checkbox]
+        
+        def process(self, p, *args):
+                print("process Event")
+
+        def process_before_every_sampling(self, p, *args, **kwargs):
+                print("process_before_every_sampling")
+
+        def process_before_every_step(self, p, *args, **kwargs):
+                print("process_before_every_step")
+                
         def run(self, p, angle, checkbox):
                 proc = process_images(p)
                 print(proc,angle,checkbox)
