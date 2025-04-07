@@ -33,17 +33,8 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
 
         def process_before_every_step(self, p, *args, **kwargs):
-                # 값의 범위 조정 (최소-최대 정규화)
-                min_val = torch.min(kwargs["d"]["x"])
-                max_val = torch.max(kwargs["d"]["x"])
-                normalized_tensor = (kwargs["d"]["x"] - min_val) / (max_val - min_val) * 255
-
-                # 텐서를 이미지로 변환
-                image_tensor = normalized_tensor.cpu().squeeze(0).permute(1, 2, 0).numpy().astype('uint8')
-                image = Image.fromarray(image_tensor)
-
-                # 이미지 저장 또는 표시
-                image.show()
+                p.steps = 30
+                print("process_before_every_step")
 
         def run(self, p, angle, checkbox):
                 proc = process_images(p)
