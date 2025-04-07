@@ -33,9 +33,9 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
 
         def process_before_every_step(self, p, *args, **kwargs):
-                proc = process_images(p)
+                proc = Processed(p, [], p.seed, "")
+                proc.images[0].show()
                 print("process_before_every_step")
-                return proc
 
         def run(self, p, angle, checkbox):
                 proc = process_images(p)
