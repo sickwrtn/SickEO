@@ -43,7 +43,7 @@ class ExtensionTemplateScript(scripts.Script):
                 proc = process_images(p)
                 print(proc)
                 # 값의 범위 조정 (최소-최대 정규화)
-                print(kwargs['d']['denoised']);
+                print(kwargs['d']['denoised'])
                 print("process_before_every_step")
 
         def run(self, p, angle, checkbox):
