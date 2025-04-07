@@ -33,7 +33,7 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
 
         def process_before_every_step(self, p, *args, **kwargs):
-                print(latents_after_sampling)
+                print(p.latents_after_sampling)
                 print(p.pixels_after_sampling)
 
         def run(self, p, angle, checkbox):
