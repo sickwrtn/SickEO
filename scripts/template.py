@@ -34,8 +34,6 @@ class ExtensionTemplateScript(scripts.Script):
 
         def process_before_every_step(self, p, *args, **kwargs):
                 proc = process_images(p)
-                if (len(proc.images) != 0):
-                        proc.images[0].show()
                 print("process_before_every_step")
                 return proc
 
