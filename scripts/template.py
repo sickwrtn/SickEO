@@ -10,7 +10,7 @@ from modules.shared import opts, cmd_opts, state
 class ExtensionTemplateScript(scripts.Script):
         # Extension title in menu UI
         def title(self):
-                return "Extension Template"
+                return "FastEO"
 
         # Decide to show menu in txt2img or img2img
         # - in "txt2img" -> is_img2img is `False`
@@ -28,7 +28,7 @@ class ExtensionTemplateScript(scripts.Script):
                                         False,
                                         label="USE THIS OPTION"
                                 )
-                return [angle, checkbox]
+                return [checkbox]
         def run(self, p, angle, checkbox):
                 proc = process_images(p)
                 print(proc,angle,checkbox)
