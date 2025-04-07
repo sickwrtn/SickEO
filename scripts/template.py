@@ -6,6 +6,8 @@ from modules import images, script_callbacks
 from modules.processing import process_images, Processed
 from modules.processing import Processed
 from modules.shared import opts, cmd_opts, state
+import PIL
+import torchvision.transforms as transforms
 
 class ExtensionTemplateScript(scripts.Script):
         # Extension title in menu UI
@@ -38,7 +40,10 @@ class ExtensionTemplateScript(scripts.Script):
                 print("process_before_every_sampling")
 
         def process_before_every_step(self, p, *args, **kwargs):
-                print(kwargs);
+                tf = transforms.ToPILImage()
+                tf(kwargs['d']['x']).show()
+                tf(kwargs["d"]['denoised']).show()
+                print(kwargs["d"]);
                 print("process_before_every_step")
 
         def run(self, p, angle, checkbox):
