@@ -3,7 +3,7 @@ import gradio as gr
 import os
 
 from modules import images, script_callbacks
-from modules.processing import process_images, Processed
+from modules.processing import process_images, Processed, process_images_inner
 from modules.processing import Processed
 from modules.shared import opts, cmd_opts, state
 import torch
@@ -33,7 +33,7 @@ class ExtensionTemplateScript(scripts.Script):
                 return [checkbox]
 
         def process_before_every_step(self, p, *args, **kwargs):
-                proc = Processed(p, [], p.seed, "")
+                proc = process_images_inner(p)
                 proc.images[0].show()
                 print("process_before_every_step")
 
